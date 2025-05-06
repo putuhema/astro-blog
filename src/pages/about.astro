@@ -1,0 +1,29 @@
+---
+
+import Container from "../layouts/Container.astro";
+const pageTitle = "About Me";
+const identity = {
+  name: "Putu Mahendra",
+  country: "Indonesia",
+  occupation: "IT Supports",
+  hobbies: ["vibe coding", "hard coding", "gaming", "doom scrolling"]
+}
+
+const skills = ['HTML', 'CSS', 'JS/TS', 'React', 'Astro', 'Java', 'php']
+---
+
+<Container title={pageTitle}>
+  <h1 class="text-base">About Me!</h1>
+  <div class="space-y-2">
+  <ul class="text-xl">
+    <li>My name is <span class="font-bold">{identity.name}</span></li>
+    <li>I live in {identity.country} and I work as a {identity.occupation}</li>
+  </ul>
+  <p class="text-lg">My skills are:</p>
+  <ul class="list-disc pl-8">
+    {
+skills.map( skill => <li>{skill}</li>)
+    }
+  </ul>
+  </div>
+</Container>
